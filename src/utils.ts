@@ -7,7 +7,7 @@ import { imageExtensions } from './types'
 export const fromRoot = (relative: string) => resolve(__dirname, '..', relative)
 
 export const getImageList = (): string[] => {
-  const files: string[] = readdirSync(join(__dirname))
+  const files: string[] = readdirSync(join(process.cwd()))
   return files.filter((file) => {
     let isImage = false
     imageExtensions.forEach((ext) => (file.includes(ext) ? (isImage = isImage || true) : null))
@@ -26,7 +26,5 @@ export const generateImports = (images: string[]) => {
 }
 
 export const generateObject = (images: string[]) => {
-  return `export const images = {
-          ${images.map((image) => getImageName(image)).join(',\n')}
-          }`
+  return `export const images = {\n${images.map((image) => getImageName(image)).join(',\n')}\n}`
 }
