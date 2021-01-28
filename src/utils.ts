@@ -3,8 +3,22 @@ import { readdirSync } from 'fs'
 const camelcase = require('camelcase')
 
 import { imageExtensions } from './types'
+import { spawn } from 'child_process'
 
 export const fromRoot = (relative: string) => resolve(__dirname, '..', relative)
+
+// @ts-ignore
+export const spawnAsync = (command: string, args, options = {}, spawner = spawn) =>
+  new Promise((resolve) => {
+    const proc = spawner(command, [].concat(args).filter(Boolean), {
+      stdio: 'inherit',
+      cwd: process.cwd(),
+      env: process.env,
+      ...options,
+    })
+
+    proc.on('exit', resolve)
+  })
 
 export const getImageList = (): string[] => {
   const files: string[] = readdirSync(join(process.cwd()))

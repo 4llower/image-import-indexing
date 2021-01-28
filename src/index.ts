@@ -2,7 +2,7 @@ import { Command, flags } from '@oclif/command'
 
 import { appendFileSync } from 'fs'
 
-import { generateImports, generateObject, getImageList } from './utils'
+import { generateImports, generateObject, getImageList, spawnAsync } from './utils'
 
 class ImageImportIndexing extends Command {
   static description = 'describe the command here'
