@@ -24,6 +24,7 @@ class ImageImportIndexing extends Command {
     const images = getImageList()
     const fileToSave = flags.name ?? 'index.ts'
     appendFileSync(fileToSave, `${generateImports(images)}\n${generateObject(images)}`)
+    this.log(`Your images imported to ${fileToSave}!`)
   }
 }
 
