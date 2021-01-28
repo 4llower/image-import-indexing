@@ -12,7 +12,7 @@ class ImageImportIndexing extends Command {
     help: flags.help({ char: 'h' }),
     name: flags.string({
       char: 'n',
-      description: 'File which need to import images {default as index.ts}',
+      description: 'File which need to import images {default as index.ts}!',
     }),
     force: flags.boolean({ char: 'f' }),
   }
