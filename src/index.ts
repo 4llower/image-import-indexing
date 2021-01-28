@@ -12,7 +12,7 @@ class ImageImportIndexing extends Command {
     help: flags.help({ char: 'h' }),
     name: flags.string({
       char: 'n',
-      description: 'file which need to import images {default as index.ts}',
+      description: 'File which need to import images {default as index.ts}',
     }),
     force: flags.boolean({ char: 'f' }),
   }
@@ -20,7 +20,7 @@ class ImageImportIndexing extends Command {
   static args = [{ name: 'file' }]
 
   async run() {
-    const { args, flags } = this.parse(ImageImportIndexing)
+    const { flags } = this.parse(ImageImportIndexing)
     const images = getImageList()
     const fileToSave = flags.name ?? 'index.ts'
     appendFileSync(fileToSave, `${generateImports(images)}\n${generateObject(images)}`)

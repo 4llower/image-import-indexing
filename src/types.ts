@@ -11,4 +11,5 @@ export const imageExtensions = [
   '.nef',
   '.orf',
   '.sr2',
+  '.svg',
 ]
