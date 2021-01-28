@@ -1,6 +1,8 @@
 import { Command, flags } from '@oclif/command'
 
-import { imageExtensions } from './types'
+import { appendFileSync } from 'fs'
+
+import { generateImports, generateObject, getImageList } from './utils'
 
 class ImageImportIndexing extends Command {
   static description = 'describe the command here'
@@ -8,7 +10,10 @@ class ImageImportIndexing extends Command {
   static flags = {
     version: flags.version({ char: 'v' }),
     help: flags.help({ char: 'h' }),
-    name: flags.string({ char: 'n', description: 'name to print' }),
+    name: flags.string({
+      char: 'n',
+      description: 'file which need to import images {default as index.ts}',
+    }),
     force: flags.boolean({ char: 'f' }),
   }
 
@@ -16,12 +21,9 @@ class ImageImportIndexing extends Command {
 
   async run() {
     const { args, flags } = this.parse(ImageImportIndexing)
-
-    const name = flags.name ?? 'world'
-    this.log(`hello ${name} from ./src/index.ts`)
-    if (args.file && flags.force) {
-      this.log(`you input --force and --file: ${args.file}`)
-    }
+    const images = getImageList()
+    const fileToSave = flags.name ?? 'index.ts'
+    appendFileSync(fileToSave, `${generateImports(images)}\n${generateObject(images)}`)
   }
 }
 

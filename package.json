@@ -11,6 +11,7 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^3",
+    "camelcase": "^6.2.0",
     "prettier": "^2.2.1",
     "tslib": "^1"
   },
