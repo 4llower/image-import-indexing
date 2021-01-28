@@ -1,7 +1,7 @@
 {
   "name": "image-import-indexing",
   "description": "CLI for creating index.ts which contains all images in folder as standart es6 import",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "4llower",
   "bin": {
     "img-i": "./bin/run"
