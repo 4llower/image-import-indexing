@@ -16,11 +16,10 @@ CLI for creating index.ts which contains all images in folder as standart es6 im
 <!-- usage -->
 ```sh-session
 $ npm install -g image-import-indexing
-$ img-i COMMAND
+$ img-i
 running command...
 $ img-i (-v|--version|version)
 image-import-indexing/1.0.0 darwin-x64 node-v14.14.0
-$ img-i --help [COMMAND]
 ...
 ```
 <!-- usagestop -->
