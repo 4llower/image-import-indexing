@@ -13,7 +13,7 @@ CLI for creating index.ts which contains all images in folder as standart es6 im
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
-#Pattern
+# Pattern
 <!-- pattern -->
     ├── hello-world.png
     ├── svg-nine.svg                   
