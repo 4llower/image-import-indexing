@@ -6,7 +6,7 @@ CLI for creating index.ts which contains all images in folder as standart es6 im
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/image-import-indexing.svg)](https://npmjs.org/package/image-import-indexing)
 [![Downloads/week](https://img.shields.io/npm/dw/image-import-indexing.svg)](https://npmjs.org/package/image-import-indexing)
-[![License](https://img.shields.io/npm/l/image-import-indexing.svg)](https://github.com/4llower/image-import-indexing/LICENCE)
+[![License](https://img.shields.io/npm/l/image-import-indexing.svg)](https://github.com/4llower/image-import-indexing/blob/master/LICENSE)
 
 <!-- toc -->
 * [Usage](#usage)
